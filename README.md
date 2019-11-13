@@ -9,7 +9,7 @@
           wText:""
     }
   ## gameOn = () => {
-    const symbol = ["Taş","Kağıt","Makas"]
+     const symbol = ["Taş","Kağıt","Makas"]
         const hand1 = symbol[Math.floor(Math.random()*symbol.length)];
         const hand2 = symbol[Math.floor(Math.random()*symbol.length)];
         var wText = "";
@@ -53,8 +53,8 @@
                 p1: hand1,
                 p2: hand2,
                 wText: wText,
-                p1Score : p1Score,
-                p2Score : p2Score,
+                p1S : this.state.p1S + p1Score,
+                p2S : this.state.p2S + p2Score,
             })
 
 ## render(){
