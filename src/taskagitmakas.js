@@ -3,82 +3,75 @@ import React, { Component } from 'react'
 class taskagitmakas extends Component {
     constructor(props) {
         super(props);
-        this.state= {
+        this.state={
             p1:"",
             p2:"",
-            p1Score: 0,
-            p2Score: 0,
-            Text: "",
-            justState: undefined,
+            p1Score:0,
+            p2Score:0,
+            wText:""
         }
     }
 
-    PReady = (Play) => {
-        const x =Math.round(Math.random() *2)
-        if(x === 0)
-            Play = "Taş";
-        if(x === 1)
-            Play = "Kağıt";
-        if(x ===2)
-            Play = "Makas";
-        return Play;
+    gameOn = () => {
+        const symbol = ["Taş","Kağıt","Makas"]
+        const hand1 = symbol[Math.floor(Math.random()*symbol.length)];
+        const hand2 = symbol[Math.floor(Math.random()*symbol.length)];
+        var wText = "";
+        let p1Score = 0;
+        let p2Score = 0;
+        switch(hand1)
+            {case "Taş":
+                if(hand2 === "Kağıt")
+                    {wText = "P2 Win";
+                     p2Score = p2Score +1}
+                else if(hand2 === "Makas")
+                    {wText = "P1 win";
+                    p1Score = p1Score + 1}
+                else if(hand2 === "Taş")
+                    {wText = "Same"; }
+                break
+            case "Kağıt":
+                if(hand2 === "Makas")
+                    {wText = "P2 Win";
+                    p2Score = p2Score +1}
+                else if(hand2 === "Taş")
+                    {wText = "P1 win";
+                    p1Score = p1Score + 1}
+                else if(hand2 === "Kağıt"){
+                    wText = "Same";
+                    }
+                break
+            case "Makas":
+                if(hand2 === "Taş")
+                    {wText = "P2 Win";
+                    p2Score = p2Score +1}
+                else if(hand2 === "Kağıt")
+                    {wText = "P1 win";
+                    p1Score = p1Score + 1}
+                else if(hand2 === "Makas"){
+                    wText = "Same";
+                }
+                break
+            }
+            this.setState({
+                p1: hand1,
+                p2: hand2,
+                wText: wText,
+                p1Score : p1Score,
+                p2Score : p2Score,
+            })
     }
 
-    PCompare = (p1,p2,winText) => {
-        winText = "";
-        var p1Score,p2Score = 0;
-        if (p1 == "Taş" && p2 == "Kağıt")
-        {
-            p2Score = p2Score + 1;
-            winText = "P2 Win";
-        }
-        else if (p1 == "Taş" && p2 == "Makas")
-        {
-            p1Score = p1Score + 1;
-            winText = "P1 Win";
-        }
-        else if (p1 == "Kağıt" && p2 == "Taş")
-        {
-            p1Score = p1Score + 1;
-            winText = "P1 Win" ;
-        }
-        else if (p1 == "Makas" && p2 == "Kağıt")
-        {
-            p1Score = p1Score + 1;
-            winText = "P1 Win";
-        }
-        else if (p1 == "Kağıt" && p2 == "Makas")
-        {
-            p2Score = p2Score + 1;
-            winText = "P2 Win" ;
-        }
-        else if (p1 == "Makas" && p2 == "Taş")
-        {
-            p2Score = p2Score + 1;
-            winText = "P2 Win";
-        }
-        else {
-            winText = "No Winners";
-        }
-        return p1Score,p2Score,winText;
-    }
-
-    PSet = () => {
-        this.setState({
-            p1: this.PReady(this.state.p1),
-            p2: this.PReady(this.state.p2)
-            //Hocam burada PCompare için burada nasıl p1,p2,Text olarak fonksiyonu çalıştırabilirim
-        })
-    }
 
     render() {
         return (
             <div>
-                <h1>P1 : {this.state.p1}</h1>
-                <h1>P2 : {this.state.p2}</h1>
-                <button onClick={this.PSet}>Start</button>
+                <h1>{this.state.p1}</h1>
+                <h1>{this.state.p2}</h1>
+                <button onClick={this.gameOn}>Start</button>
                 <h1>Score Board</h1>
-                <h2>P1:{this.state.p1Score} P2:{this.state.p2Score}</h2>
+                <h1>{this.state.p1Score} || {this.state.p2Score}</h1>
+                <h1>{this.state.wText}</h1>
             </div>
         );
     }
