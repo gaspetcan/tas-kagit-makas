@@ -6,8 +6,8 @@ class taskagitmakas extends Component {
         this.state={
             p1:"",
             p2:"",
-            p1Score:0,
-            p2Score:0,
+            p1S:0,
+            p2S:0,
             wText:""
         }
     }
@@ -57,8 +57,8 @@ class taskagitmakas extends Component {
                 p1: hand1,
                 p2: hand2,
                 wText: wText,
-                p1Score : p1Score,
-                p2Score : p2Score,
+                p1S : this.state.p1S + p1Score,
+                p2S : this.state.p2S + p2Score,
             })
     }
 
@@ -70,7 +70,7 @@ class taskagitmakas extends Component {
                 <h1>{this.state.p2}</h1>
                 <button onClick={this.gameOn}>Start</button>
                 <h1>Score Board</h1>
-                <h1>{this.state.p1Score} || {this.state.p2Score}</h1>
+                <h1>{this.state.p1S} || {this.state.p2S}</h1>
                 <h1>{this.state.wText}</h1>
             </div>
         );
