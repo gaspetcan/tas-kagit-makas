@@ -1,18 +1,21 @@
 ![RPC](https://media.giphy.com/media/L4CPNW9c23ZgKBT6uV/giphy.gif)
 
-This project was bootstrapped with Create React App.
-Available Scripts
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Available Scripts
 
 In the project directory, you can run:
-npm install
 
-Runs the app in the development mode.
-Open http://localhost:3000 to view it in the browser.
+### npm install
 
-The page will reload if you make edits.
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
-Learn More
 
-You can learn more in the Create React App documentation.
+## Learn More
 
-To learn React, check out the React documentation.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
