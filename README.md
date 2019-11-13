@@ -1,3 +1,4 @@
+# Rock Paper Scissors
 ![RPC](https://media.giphy.com/media/L4CPNW9c23ZgKBT6uV/giphy.gif)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
