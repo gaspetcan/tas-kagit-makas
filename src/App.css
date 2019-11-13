@@ -20,3 +20,67 @@
 .App-link {
   color: #09d3ac;
 }
+
+.game{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  max-height:600px;
+}
+
+.player-zone{
+  margin: auto;
+  width: 50%;
+  height:200px;
+  border:#CCC solid 1px;
+  background-color: #F00;
+}
+
+.player-left {
+  height:150px;
+  max-width:219px;
+  background-color: #cc7277;
+  padding:25px;
+  border-radius: 50%;
+}
+.player-right{
+  height:150px;
+  max-width:219px;
+  background-color: #6c8ccc;
+  padding:25px;
+  border-radius: 80%;
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+
+.animate
+{
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+}
+
+.action-button
+{
+  padding: 10px 40px;
+  margin: 20px 10px 10px 0px;
+  border-radius: 10px;
+  font-family: 'Pacifico', cursive;
+  font-size: 25px;
+  color: #FFF;
+  text-decoration: none;
+}
+
+h1{
+  color: #2980B9;
+  font-family: 'Pacifico', cursive;
+}
+
+.blue
+{
+  background-color: #3498DB;
+  border-bottom: 5px solid #2980B9;
+  text-shadow: 0px -2px #2980B9;
+}

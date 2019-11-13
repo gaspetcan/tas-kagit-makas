@@ -66,12 +66,17 @@ class taskagitmakas extends Component {
     render() {
         return (
             <div>
-                <h1>{this.state.p1}</h1>
-                <h1>{this.state.p2}</h1>
-                <button onClick={this.gameOn}>Start</button>
-                <h1>Score Board</h1>
-                <h1>{this.state.p1S} || {this.state.p2S}</h1>
-                <h1>{this.state.wText}</h1>
+                <div class="game">
+                    <h1>Rock Paper Scissors</h1>
+                    <h1>Score Board</h1>
+                    <h1>{this.state.p1S} || {this.state.p2S}</h1>
+                    <div class="playerZone">
+                        <img class="player-left" src={`./${this.state.p1}.png`}></img>
+                        <img class="player-right" src={this.state.p2 + `.png`}></img>
+                    </div>
+                    <h1>{this.state.wText}</h1>
+                    <button class="action-button shadow animate blue" onClick={this.gameOn}>Start</button>
+                </div>
             </div>
         );
     }
